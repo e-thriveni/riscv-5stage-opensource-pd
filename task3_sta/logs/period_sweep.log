@@ -1,0 +1,72 @@
+Script started on 2026-10-13 11:43:22+02:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="184" LINES="51"]
+[?2004h[0;32m/foss/designs/riscv_pipeline >[0;38m sta -no_splash
+[?2004l% ^[[A^[[A        read_liberty /foss/pdks/ciel/sky130/versions/f6eeac7dad085ffcc829ccfd721f7b4ce39edcf7/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v880  0.lib
+1
+% read_verilog synth_output/top_riscv_synth.v
+1
+% link_design top_riscv
+1
+% read_sdc constraint.sdc
+% report_clock_properties
+Clock                   Period          Waveform
+----------------------------------------------------
+clk                      25.00        0.00     12.50
+% create_clock -name clk -period 40 [get_ports clk]
+% report_worst_slack -max
+worst slack max 15.41
+% report_tns
+tns max 0.00
+% report_checks -path_delay max > task3_sta/logs/setup_40ns.rpt
+% report_worst_slack -min
+worst slack min 0.33
+% report_cj hecks -path_delay min > task3  _sta/logs/hold_40ns.rpt
+% cra eate_clock -name clk -period 25 [get_ports clk]
+% puts "=== period 25ns ==="
+=== period 25ns ===
+% report_worst_slack -max
+worst slack max 0.41
+% report_tns
+tns max 0.00
+% report_worts  st_slack_min
+invalid command name "report_worst_slack_min"
+% report_worst_slack -min
+worst slack min 0.33
+% report_checks -path_delay max > task3_sta/logs/setup_25ns.rpt
+% report_checks -path_delay mib n > task3_sta/logs/hold_25ns.rpt
+% create_clock -name clk -period 20 [get_ports clk]
+% puts "=== period 20ns ==="
+=== period 20ns ===
+% report_worst_slack -max
+worst slack max -4.59
+% report_tns
+tns max -819.77
+% report_slack -min\ 
+Error 562: constraint.sdc line 1, report_slack -min is not a known keyword or flag.
+% report_worst_slack -min
+worst slack min 0.33
+% report_checks -path_delay max > task3_sta/logs/d setup_20ns.rpt
+% report_cj hecks -path_delay min > task3_sta/logs/hold_20ns.rpt
+% create_clock -name clk -period 24 [get_ports clk]
+% puts "==== period 24ns ==="
+==== period 24ns ===
+% report_worst_slack -max
+worst slack max -0.59
+% report_tns
+tns max -7.06
+% report_worst_slack -max
+worst slack max -0.59
+% report_tns
+tns max -7.06
+% report_worst_slack -min
+worst slack min 0.33
+% report_ck hecks -path_delay max > task3_sta/logs/setup_24ns.rpt
+% report_checks -path_delay min > task3_sta/logs/hold_24ns.rpt
+% exit
+[?2004h[0;32m/foss/designs/riscv_pipeline >[0;38m sta -no_splashnano task2_floorplan_placement/floorplan_placement.tcl[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pmkdir -p task2_floorplan_placement/logs[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls src[Kcd /foss/designs/riscv_pipelineopenroad[K[2Pls srccd /foss/designs/riscv_pipeline[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Krm -f task3_sta/logs/setup_25s[Kn.rpt
+[?2004l[?2004h[0;32m/foss/designs/riscv_pipeline >[0;38m ls task3_sta/logs
+[?2004lhold_20ns.rpt  hold_24ns.rpt  hold_25ns.rpt  hold_40ns.rpt  period_sweep.log  setup_20ns.rpt  setup_24ns.rpt  setup_25ns.rpt  setup_40ns.rpt
+[?2004h[0;32m/foss/designs/riscv_pipeline >[0;38m grep -E "===|slack|tns" task3_sta/logs/period_sweep.log
+[?2004l[?2004h[0;32m/foss/designs/riscv_pipeline >[0;38m exir[Kt
+[?2004lexit
+
+Script done on 2026-10-13 12:18:36+02:00 [COMMAND_EXIT_CODE="1"]
