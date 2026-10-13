@@ -1,0 +1,7 @@
+rtl_repo/
+riscv_clean/
+riscv-pipelined-processor/
+runs/
+*.odb
+*.out
+*.vcd
