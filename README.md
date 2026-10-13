@@ -13,7 +13,7 @@ RTL-to-GDSII flow for a 5-stage pipelined RISC-V core using open-source tools on
 - Tool: Yosys, SKY130 standard cell library
 - Top module: `top_riscv` (8 modules parsed, 2 unused modules removed by hierarchy check)
 - Register file: 992 flip-flops mapped with `dfflibmap`
-- Total cells: XXXX | Area: XXXX um^2 (fill from `task1_synthesis/logs/synth_stat.txt`)
+- Total cells: 8502 | Area: 86192.67 um^2 (48.89% sequential)
 
 Details and screenshots: [task1_synthesis](task1_synthesis/)
 
